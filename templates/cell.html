@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Cell Data - {{ cell_id }}{% endblock %}
+
+{% block content %}
+    <h1>Cell Data - Power BI Chart {{ cell_id }}</h1>
+    <img 
+        width="800"
+        height="600"
+        src="{{ url_for('static', filename='Cell_{}.png'.format(cell_id)) }}"
+    >
+{% endblock %}

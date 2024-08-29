@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Dashboard{% endblock %}</title>
+</head>
+<style>
+    body {
+        display: flex;
+        font-family: Arial, sans-serif;
+    }
+    .sidebar {
+        width: 200px;
+        background-color: #f8f9fa;
+        padding: 15px;
+        height: 100vh;
+    }
+    .sidebar a {
+        display: block;
+        margin: 10px 0;
+        padding: 10px;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        border-radius: 5px;
+    }
+    .sidebar a:hover {
+        background-color: #0056b3;
+    }
+    .content {
+        flex: 1;
+        padding: 20px;
+    }
+    img{
+        object-fit: cover;
+    }
+</style>
+<body>
+    <body>
+        <div class="sidebar">
+            <a href="{{ url_for('get_cell_summary') }}">Overview</a>
+            <a href="{{ url_for('get_cell_data', cell_id=5308) }}">Cell 5308</a>
+            <a href="{{ url_for('get_cell_data', cell_id=5329) }}">Cell 5329</a>
+        </div>
+        <div class="content">
+            {% block content %}{% endblock %}
+        </div>
+    </body>
+    
+</body>
+</html>

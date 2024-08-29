@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Overview{% endblock %}
+
+{% block content %}
+    <h1>Overview</h1>
+    <img 
+        width="800"
+        height="600"
+        src="{{ url_for('static',filename='piechart.png') }}"
+    >
+{% endblock %}
